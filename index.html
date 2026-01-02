@@ -3,63 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Адвокат Мельников Д.Е. | Официальный сайт</title>
+    <title>Адвокат Мельников Дмитрий Евгеньевич | Официальный сайт</title>
+    <meta name="description" content="Официальный сайт адвоката Мельникова Дмитрия Евгеньевича, члена Стерлитамакского городского филиала НО «БРКА» Республики Башкортостан">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f0f5ff',
-                            100: '#e0eaff',
-                            200: '#c3d5ff',
-                            300: '#9bb5ff',
-                            400: '#6c8fff',
-                            500: '#4a6fd8',
-                            600: '#3356c2',
-                            700: '#25429d',
-                            800: '#1d357a',
-                            900: '#142963',
-                        },
-                        accent: {
-                            400: '#d4af37',
-                            500: '#c59e2d',
-                            600: '#b08b20',
-                        },
-                        neutral: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0c1524',
-                        }
-                    },
-                    boxShadow: {
-                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
-                        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-                    },
-                    transitionProperty: {
-                        'all': 'all',
-                    }
-                }
-            }
-        }
-    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&display=swap');
+        :root {
+            --primary-500: #4a6fd8;
+            --primary-600: #3356c2;
+            --primary-700: #25429d;
+            --primary-100: #e0eaff;
+            --accent-400: #d4af37;
+            --accent-500: #c59e2d;
+            --neutral-50: #f8fafc;
+            --neutral-100: #f1f5f9;
+            --neutral-200: #e2e8f0;
+            --neutral-300: #cbd5e1;
+            --neutral-400: #94a3b8;
+            --neutral-500: #64748b;
+            --neutral-600: #475569;
+            --neutral-700: #334155;
+            --neutral-800: #1e293b;
+            --neutral-900: #0c1524;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
+            background-color: var(--neutral-50);
+            color: var(--neutral-800);
+            line-height: 1.6;
             scroll-behavior: smooth;
         }
         
@@ -68,47 +46,316 @@
             font-weight: 600;
         }
         
-        .nav-item {
-            position: relative;
-            transition: all 0.3s ease;
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        .nav-item::after {
+        /* Header styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-700);
+        }
+        
+        .logo span {
+            color: var(--accent-400);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--neutral-700);
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            padding: 4px 0;
+        }
+        
+        nav a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background-color: #d4af37;
+            background-color: var(--accent-400);
             transition: width 0.3s ease;
         }
         
-        .nav-item:hover::after {
+        nav a:hover::after {
             width: 100%;
+        }
+        
+        nav a:hover {
+            color: var(--primary-700);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--neutral-700);
+            cursor: pointer;
+        }
+        
+        .contact-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+        
+        .contact-phone a {
+            color: var(--neutral-800);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-phone a:hover {
+            color: var(--primary-700);
+        }
+        
+        /* Cookie notice */
+        .cookie-notice {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 12px;
+            padding: 16px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            max-width: 95%;
+            width: 500px;
+            z-index: 100;
+            border-left: 4px solid var(--accent-400);
+            animation: slideUp 0.4s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translate(-50%, 100%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+        
+        .cookie-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+        }
+        
+        .cookie-text {
+            flex: 1;
+            min-width: 250px;
+            font-size: 14px;
+            color: var(--neutral-700);
+        }
+        
+        .cookie-text a {
+            color: var(--primary-600);
+            text-decoration: underline;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-size: 14px;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--neutral-300);
+            color: var(--neutral-700);
+        }
+        
+        .btn-primary {
+            background: var(--accent-400);
+            color: var(--neutral-900);
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+        }
+        
+        /* Section styles */
+        .section {
+            padding: 80px 0;
         }
         
         .section-title {
             position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--neutral-900);
         }
         
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 50px;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, #d4af37 0%, #c59e2d 100%);
+            background: linear-gradient(90deg, var(--accent-400) 0%, var(--accent-500) 100%);
             border-radius: 3px;
         }
         
+        /* About section */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        @media (min-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 16px;
+        }
+        
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        .credentials {
+            background-color: var(--neutral-100);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+            border-left: 3px solid var(--primary-500);
+        }
+        
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        
+        @media (min-width: 768px) {
+            .credentials-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .credential-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .credential-item strong {
+            color: var(--neutral-800);
+            margin-bottom: 2px;
+        }
+        
+        .credential-item span {
+            color: var(--neutral-600);
+            font-size: 15px;
+        }
+        
+        .consultation-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+            color: white;
+            padding: 12px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 24px;
+            text-align: center;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(51, 86, 194, 0.3);
+        }
+        
+        .consultation-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(51, 86, 194, 0.4);
+        }
+        
+        .consultation-btn i {
+            margin-right: 8px;
+        }
+        
+        /* Specialization section */
         .specialization-category {
             position: relative;
-            padding-bottom: 0.75rem;
-            margin-top: 3rem;
+            font-size: 1.5rem;
+            color: var(--neutral-900);
+            margin: 40px 0 24px;
+            padding-bottom: 8px;
         }
         
         .specialization-category::after {
@@ -118,38 +365,508 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, #d4af37 0%, rgba(212, 175, 55, 0) 100%);
+            background: linear-gradient(90deg, var(--accent-400) 0%, transparent 100%);
         }
         
-        .card-icon {
-            background: linear-gradient(135deg, #f0f5ff 0%, #e0eaff 100%);
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .specialization-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        
+        @media (min-width: 768px) {
+            .specialization-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .specialization-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .specialization-card {
+            background: white;
             border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--neutral-200);
             transition: all 0.3s ease;
         }
         
-        .specialization-card:hover .card-icon {
+        .specialization-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px -5px rgba(68, 115, 224, 0.25);
-            background: linear-gradient(135deg, #d4af37 0%, #c59e2d 100%);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary-200);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-50), var(--primary-100));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .card-icon i {
+            font-size: 24px;
+            color: var(--primary-600);
+        }
+        
+        .specialization-card:hover .card-icon {
+            background: linear-gradient(135deg, var(--accent-400), var(--accent-500));
         }
         
         .specialization-card:hover .card-icon i {
-            color: #0c1524;
+            color: var(--neutral-900);
         }
         
+        .card-title {
+            font-size: 1.25rem;
+            color: var(--neutral-900);
+            margin-bottom: 0;
+        }
+        
+        .card-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .card-list li {
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 8px;
+            color: var(--neutral-700);
+            font-size: 16px;
+        }
+        
+        .card-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-400);
+            font-weight: bold;
+        }
+        
+        /* Contact section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        @media (min-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .contact-info {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--neutral-200);
+        }
+        
+        .contact-title {
+            font-size: 1.75rem;
+            color: var(--neutral-900);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            background: var(--neutral-50);
+            transition: all 0.3s;
+        }
+        
+        .contact-item:hover {
+            background: var(--primary-50);
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--primary-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .contact-icon i {
+            font-size: 20px;
+            color: var(--primary-600);
+        }
+        
+        .contact-details h4 {
+            font-size: 18px;
+            color: var(--neutral-900);
+            margin-bottom: 4px;
+        }
+        
+        .contact-details p, 
+        .contact-details a {
+            color: var(--neutral-700);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-details a:hover {
+            color: var(--primary-700);
+        }
+        
+        .messengers {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--neutral-200);
+        }
+        
+        .messengers-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--neutral-900);
+        }
+        
+        .messenger-links {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .messenger-link {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--neutral-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .messenger-link:hover {
+            transform: translateY(-3px);
+        }
+        
+        .messenger-link.telegram:hover {
+            background: #0088cc;
+            color: white;
+        }
+        
+        .messenger-link.maxim:hover {
+            background: black;
+            color: white;
+        }
+        
+        .messenger-link img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+        
+        .schedule {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 24px;
+            border: 1px solid #bae6fd;
+        }
+        
+        .schedule h4 {
+            font-size: 18px;
+            color: var(--neutral-900);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .schedule-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .schedule-list li {
+            padding: 6px 0;
+            color: var(--neutral-700);
+            border-bottom: 1px dashed var(--neutral-300);
+        }
+        
+        .schedule-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .schedule-note {
+            font-size: 14px;
+            color: var(--neutral-600);
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--neutral-200);
+        }
+        
+        .form-title {
+            font-size: 1.75rem;
+            color: var(--neutral-900);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--neutral-800);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--neutral-300);
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-500);
+            box-shadow: 0 0 0 3px rgba(74, 111, 216, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        
+        .checkbox-group input {
+            margin-top: 4px;
+            width: 18px;
+            height: 18px;
+        }
+        
+        .checkbox-group label {
+            font-size: 15px;
+            color: var(--neutral-700);
+            margin-bottom: 0;
+        }
+        
+        .checkbox-group a {
+            color: var(--primary-600);
+            text-decoration: underline;
+        }
+        
+        .map-container {
+            margin-top: 40px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--neutral-200);
+            height: 400px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--neutral-900);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .footer-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            color: var(--accent-400);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-400);
+        }
+        
+        .footer-about p {
+            color: var(--neutral-300);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--neutral-300);
+            text-decoration: none;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-links i {
+            color: var(--accent-400);
+            font-size: 12px;
+            margin-top: 4px;
+        }
+        
+        .useful-links img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        
+        .footer-contacts .contact-item {
+            margin-bottom: 16px;
+            padding: 0;
+            background: transparent;
+            border-radius: 0;
+        }
+        
+        .footer-contacts .contact-item:hover {
+            transform: none;
+            background: transparent;
+        }
+        
+        .footer-contacts i {
+            color: var(--accent-400);
+            margin-right: 10px;
+            font-size: 18px;
+            width: 20px;
+        }
+        
+        .footer-contacts a {
+            color: var(--neutral-300);
+            transition: color 0.3s;
+        }
+        
+        .footer-contacts a:hover {
+            color: white;
+        }
+        
+        .footer-social {
+            margin-top: 20px;
+        }
+        
+        .footer-social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background: var(--accent-400);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--neutral-400);
+            font-size: 15px;
+        }
+        
+        /* Back to top button */
         .back-to-top {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 56px;
-            height: 56px;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #4a6fd8 0%, #3356c2 100%);
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
             color: white;
             display: flex;
             align-items: center;
@@ -172,466 +889,458 @@
             box-shadow: 0 6px 15px rgba(51, 86, 194, 0.5);
         }
         
-        .cookie-notice {
-            position: fixed;
-            bottom: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            border-radius: 16px;
-            padding: 1.25rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
-            max-width: 95%;
-            width: 500px;
-            z-index: 100;
-            border-left: 4px solid #d4af37;
-            animation: slideUp 0.4s ease;
-        }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translate(-50%, 100%);
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .section {
+                padding: 60px 0;
             }
-            to {
-                opacity: 1;
-                transform: translate(-50%, 0);
+            
+            .section-title h2 {
+                font-size: 2.25rem;
+            }
+            
+            .specialization-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
-        .menu-btn {
-            transition: all 0.3s ease;
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 76px;
+                right: -100%;
+                flex-direction: column;
+                background-color: white;
+                width: 280px;
+                height: calc(100vh - 76px);
+                padding: 30px 20px;
+                transition: right 0.3s;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .header-container {
+                flex-wrap: wrap;
+            }
+            
+            .contact-phone {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .specialization-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cookie-notice {
+                width: 90%;
+            }
         }
         
-        .menu-btn:hover {
-            transform: scale(1.1);
-        }
-        
-        .form-input {
-            transition: all 0.3s ease;
-            border: 1px solid #cbd5e1;
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: #6c8fff;
-            box-shadow: 0 0 0 3px rgba(108, 143, 255, 0.25);
-        }
-        
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
-            margin: 4rem 0;
-        }
-        
-        .stats-card {
-            background: linear-gradient(135deg, white 0%, #f8fafc 100%);
-            transition: all 0.3s ease;
-        }
-        
-        .stats-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .contact-method {
-            transition: all 0.3s ease;
-        }
-        
-        .contact-method:hover {
-            transform: translateX(5px);
-        }
-        
-        .accordion-header {
-            transition: all 0.3s ease;
-        }
-        
-        .accordion-header:hover {
-            background-color: #f1f5f9;
-        }
-        
-        .custom-icon {
-            width: 24px;
-            height: 24px;
-            object-fit: contain;
-        }
-        
-        .org-icon {
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
-            margin-right: 8px;
+        @media (max-width: 480px) {
+            .section {
+                padding: 40px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.75rem;
+            }
+            
+            .about-container {
+                gap: 30px;
+            }
+            
+            .consultation-btn {
+                display: block;
+                width: 100%;
+            }
+            
+            .contact-title,
+            .form-title {
+                font-size: 1.5rem;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
         }
     </style>
 </head>
-<body class="min-h-screen">
+<body>
+    <!-- Cookie notice -->
+    <div class="cookie-notice" id="cookieNotice">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                Используя наш сайт, вы даете согласие на обработку файлов cookie и персональных данных в соответствии с нашей <a href="#">Политикой конфиденциальности</a>.
+            </div>
+            <div class="cookie-buttons">
+                <button class="btn btn-outline" id="declineCookies">Отклонить</button>
+                <button class="btn btn-primary" id="acceptCookies">Согласен</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
-    <header class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                    <div class="text-primary-900 font-bold text-xl">Адвокат <span class="text-accent-500">Мельников Д.Е.</span></div>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <nav>
-                        <ul class="flex space-x-6">
-                            <li><a href="#about" class="nav-item text-neutral-700 font-medium hover:text-primary-700">Обо мне</a></li>
-                            <li><a href="#specialization" class="nav-item text-neutral-700 font-medium hover:text-primary-700">Специализация</a></li>
-                            <li><a href="#contacts" class="nav-item text-neutral-700 font-medium hover:text-primary-700">Контакты</a></li>
-                        </ul>
-                    </nav>
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-phone text-neutral-500"></i>
-                        <a href="tel:+79177948731" class="font-medium text-neutral-800 hover:text-primary-700 transition-colors">+7 (917) 794-87-31</a>
-                    </div>
-                </div>
-                
-                <button class="md:hidden menu-btn text-neutral-700 focus:outline-none" id="mobileMenuBtn">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                Адвокат <span>Мельников Дмитрий Евгеньевич</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#specialization">Специализация</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="contact-phone">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+79177948731">+7 (917) 794-87-31</a>
             </div>
         </div>
     </header>
 
-    <!-- Cookie notice -->
-    <div class="cookie-notice" id="cookieNotice">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div class="flex-1">
-                <p class="text-neutral-700 text-sm">Используя наш сайт, вы даете согласие на обработку файлов cookie и персональных данных в соответствии с нашей <a href="#" class="text-primary-600 hover:underline">Политикой конфиденциальности</a>.</p>
-            </div>
-            <div class="flex space-x-3">
-                <button class="px-4 py-2 text-sm font-medium text-neutral-700 bg-neutral-100 hover:bg-neutral-200 rounded-lg transition-colors" id="declineCookies">Отклонить</button>
-                <button class="px-4 py-2 text-sm font-medium text-white bg-accent-500 hover:bg-accent-600 rounded-lg transition-colors" id="acceptCookies">Согласен</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Back to top button -->
     <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up text-xl"></i>
+        <i class="fas fa-arrow-up"></i>
     </div>
 
     <!-- About section -->
-	<section class="py-20 bg-white" id="about">
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch"> <!-- Изменено items-center на items-stretch -->
-            <div class="flex items-center justify-center">
-                <div class="relative w-full" style="aspect-ratio: 3/4;"> <!-- Добавлено соотношение сторон и растягивание -->
-                    <div class="absolute -inset-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl blur opacity-30"></div>
-                    <img src="2.jpg" alt="Адвокат Мельников Дмитрий Евгеньевич" class="relative rounded-xl shadow-2xl object-cover w-full h-full">
-                </div>
-            </div>
-            <div>
-                <p class="text-lg text-neutral-700 mb-6 leading-relaxed">
-                    Адвокат Мельников Дмитрий Евгеньевич с 10-летним стажем в области юриспруденции. Окончил юридический факультет ФГБОУ ВПО «Башкирский государственный университет».
-                </p>
-                <p class="text-lg text-neutral-700 mb-6 leading-relaxed">
-                    С 2015 по 2025 годы занимал различные должности в органах государственной власти, что позволяет мне глубоко понимать механизмы работы государственных институтов и эффективно защищать интересы моих доверителей.
-                </p>
-                <p class="text-lg text-neutral-700 mb-8 leading-relaxed">
-                    Мой подход к работе строится на принципах профессионализма, конфиденциальности и индивидуального подхода к каждому делу. Я уделяю особое внимание детальному анализу ситуации и разработке оптимальной стратегии защиты прав и законных интересов доверителей.
-                </p>
-                
-                <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-neutral-600"><strong>Реестровый номер адвоката:</strong> 03/3144</p>
-                            <p class="text-neutral-600"><strong>Адвокатская палата:</strong> Республики Башкортостан</p>
-                        </div>
-                        <div>
-                            <p class="text-neutral-600"><strong>Членство:</strong> Стерлитамакский городской филиал НО «БРКА»</p>
-                            <p class="text-neutral-600"><strong>Стаж работы:</strong> более 10 лет</p>
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-text">
+                    <p>Адвокат с 10-летним стажем в области юриспруденции. Окончил юридический факультет ФГБОУ ВПО «Башкирский государственный университет».</p>
+                    <p>С 2015 по 2025 годы занимал различные должности в органах государственной власти, что позволяет мне глубоко понимать механизмы работы государственных институтов и эффективно защищать интересы моих доверителей.</p>
+                    <p>Мой подход к работе строится на принципах профессионализма, конфиденциальности и индивидуального подхода к каждому делу. Я уделяю особое внимание детальному анализу ситуации и разработке оптимальной стратегии защиты прав и законных интересов доверителей.</p>
+                    
+                    <div class="credentials">
+                        <div class="credentials-grid">
+                            <div class="credential-item">
+                                <strong>Реестровый номер адвоката:</strong>
+                                <span>03/3144</span>
+                            </div>
+                            <div class="credential-item">
+                                <strong>Адвокатская палата:</strong>
+                                <span>Республики Башкортостан</span>
+                            </div>
+                            <div class="credential-item">
+                                <strong>Членство:</strong>
+                                <span>Стерлитамакский городской филиал НО «БРКА»</span>
+                            </div>
+                            <div class="credential-item">
+                                <strong>Стаж работы:</strong>
+                                <span>более 10 лет</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="mt-8 text-center">
-                    <a href="tel:+79177948731" class="px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-800 text-white font-semibold rounded-lg hover:from-primary-700 hover:to-primary-900 transition-all transform hover:scale-105 shadow-md inline-block">
-                        <i class="fas fa-phone mr-2"></i>Получить консультацию
+                    
+                    <a href="tel:+79177948731" class="consultation-btn">
+                        <i class="fas fa-phone"></i>Получить консультацию
                     </a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Адвокат Мельников Дмитрий Евгеньевич">
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Specialization section -->
-    <section class="py-20 bg-white" id="specialization">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">Специализация</h2>
-                <div class="section-title mx-auto"></div>
-                <p class="mt-6 text-lg text-neutral-600 max-w-3xl mx-auto">Я оказываю квалифицированную юридическую помощь как физическим лицам, так и организациям по следующим направлениям:</p>
+    <section class="section" style="background-color: var(--neutral-100);" id="specialization">
+        <div class="container">
+            <div class="section-title">
+                <h2>Специализация</h2>
             </div>
             
             <!-- For Individuals -->
-            <h3 class="specialization-category text-2xl font-bold text-neutral-900">Для физических лиц</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-user-shield text-2xl text-primary-600"></i>
+            <h3 class="specialization-category">Для физических лиц</h3>
+            <div class="specialization-grid">
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-user-shield"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Защита прав потребителей</h3>
+                        <h3 class="card-title">Защита прав потребителей</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Консультации по защите прав потребителей</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Составление претензий и исковых заявлений</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Представительство в суде</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Взыскание компенсации морального вреда</li>
+                    <ul class="card-list">
+                        <li>Консультации по защите прав потребителей</li>
+                        <li>Составление претензий и исковых заявлений</li>
+                        <li>Представительство в суде</li>
+                        <li>Взыскание компенсации морального вреда</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-home text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-home"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Жилищные споры и недвижимость</h3>
+                        <h3 class="card-title">Жилищные споры и недвижимость</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Проверка чистоты сделок с недвижимостью</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Споры с застройщиками</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Расторжение договоров купли-продажи</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Признание права собственности</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Споры по аренде жилья</li>
+                    <ul class="card-list">
+                        <li>Проверка чистоты сделок с недвижимостью</li>
+                        <li>Споры с застройщиками</li>
+                        <li>Расторжение договоров купли-продажи</li>
+                        <li>Признание права собственности</li>
+                        <li>Споры по аренде жилья</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-gavel text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-gavel"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Уголовные дела</h3>
+                        <h3 class="card-title">Уголовные дела</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Защита в ходе досудебного производства</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Представление интересов в суде</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Обжалование приговоров и решений</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Сопровождение на всех стадиях уголовного процесса</li>
+                    <ul class="card-list">
+                        <li>Защита в ходе досудебного производства</li>
+                        <li>Представление интересов в суде</li>
+                        <li>Обжалование приговоров и решений</li>
+                        <li>Сопровождение на всех стадиях уголовного процесса</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-landmark text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-landmark"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Споры с госорганами</h3>
+                        <h3 class="card-title">Споры с госорганами</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Обжалование административных штрафов</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Обжалование постановлений</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Защита при проверках (Роспотребнадзор, Роструд)</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Составление жалоб в прокуратуру</li>
+                    <ul class="card-list">
+                        <li>Обжалование административных штрафов</li>
+                        <li>Обжалование постановлений</li>
+                        <li>Защита при проверках (Роспотребнадзор, Роструд)</li>
+                        <li>Составление жалоб в прокуратуру</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-scale-balanced text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-scale-balanced"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Защита прав в суде</h3>
+                        <h3 class="card-title">Защита прав в суде</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Взыскание долгов</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Возмещение ущерба</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Компенсация морального вреда</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Расторжение договоров</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Признание сделок недействительными</li>
+                    <ul class="card-list">
+                        <li>Взыскание долгов</li>
+                        <li>Возмещение ущерба</li>
+                        <li>Компенсация морального вреда</li>
+                        <li>Расторжение договоров</li>
+                        <li>Признание сделок недействительными</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-file-invoice-dollar text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Налоговые вопросы для физлиц</h3>
+                        <h3 class="card-title">Налоговые вопросы для физлиц</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Консультации по налоговому законодательству</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Споры с налоговыми органами</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Возврат переплат по налогам</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Представительство в судах</li>
+                    <ul class="card-list">
+                        <li>Консультации по налоговому законодательству</li>
+                        <li>Споры с налоговыми органами</li>
+                        <li>Возврат переплат по налогам</li>
+                        <li>Представительство в судах</li>
                     </ul>
                 </div>
             </div>
             
             <!-- For Business -->
-            <h3 class="specialization-category text-2xl font-bold text-neutral-900">Для бизнеса</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-briefcase text-2xl text-primary-600"></i>
+            <h3 class="specialization-category">Для бизнеса</h3>
+            <div class="specialization-grid">
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-briefcase"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Арбитражные споры</h3>
+                        <h3 class="card-title">Арбитражные споры</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Представительство в арбитражном суде по долгам</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Споры по договорам поставки и подряда</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Споры по аренде коммерческой недвижимости</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Споры по государственным контрактам</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Корпоративные споры</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Представительство при банкротстве</li>
+                    <ul class="card-list">
+                        <li>Представительство в арбитражном суде по долгам</li>
+                        <li>Споры по договорам поставки и подряда</li>
+                        <li>Споры по аренде коммерческой недвижимости</li>
+                        <li>Споры по государственным контрактам</li>
+                        <li>Корпоративные споры</li>
+                        <li>Представительство при банкротстве</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-calculator text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-calculator"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Налоговое право и споры</h3>
+                        <h3 class="card-title">Налоговое право и споры</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Юридическое сопровождение налоговых проверок</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Урегулирование налоговых споров в судебном порядке</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Оптимизация налогообложения</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Оспаривание доначислений налоговых органов</li>
+                    <ul class="card-list">
+                        <li>Юридическое сопровождение налоговых проверок</li>
+                        <li>Урегулирование налоговых споров в судебном порядке</li>
+                        <li>Оптимизация налогообложения</li>
+                        <li>Оспаривание доначислений налоговых органов</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-industry text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-industry"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Административные споры и проверки</h3>
+                        <h3 class="card-title">Административные споры и проверки</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Защита при проверках госорганов</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Обжалование постановлений и решений</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Взаимодействие с прокуратурой</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Подготовка возражений на акты проверок</li>
+                    <ul class="card-list">
+                        <li>Защита при проверках госорганов</li>
+                        <li>Обжалование постановлений и решений</li>
+                        <li>Взаимодействие с прокуратурой</li>
+                        <li>Подготовка возражений на акты проверок</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-file-contract text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-file-contract"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Корпоративное право и договоры</h3>
+                        <h3 class="card-title">Корпоративное право и договоры</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Разработка и экспертиза договоров</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Проверка контрагентов</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Разрешение корпоративных споров</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Сопровождение сделок</li>
+                    <ul class="card-list">
+                        <li>Разработка и экспертиза договоров</li>
+                        <li>Проверка контрагентов</li>
+                        <li>Разрешение корпоративных споров</li>
+                        <li>Сопровождение сделок</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-copyright text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-copyright"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Интеллектуальная собственность</h3>
+                        <h3 class="card-title">Интеллектуальная собственность</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Регистрация и защита товарных знаков</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Защита патентных прав</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Споры в сфере авторского права</li>
+                    <ul class="card-list">
+                        <li>Регистрация и защита товарных знаков</li>
+                        <li>Защита патентных прав</li>
+                        <li>Споры в сфере авторского права</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-handshake text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-handshake"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Юридическое сопровождение</h3>
+                        <h3 class="card-title">Юридическое сопровождение</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Комплексное обслуживание бизнеса</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Консультирование по текущим вопросам</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Разработка шаблонов договоров</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Правовой аудит деятельности</li>
+                    <ul class="card-list">
+                        <li>Комплексное обслуживание бизнеса</li>
+                        <li>Консультирование по текущим вопросам</li>
+                        <li>Разработка шаблонов договоров</li>
+                        <li>Правовой аудит деятельности</li>
                     </ul>
                 </div>
             </div>
             
             <!-- General Legal Services -->
-            <h3 class="specialization-category text-2xl font-bold text-neutral-900">Общие юридические услуги</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-court text-2xl text-primary-600"></i>
+            <h3 class="specialization-category">Общие юридические услуги</h3>
+            <div class="specialization-grid">
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-court"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Судебное представительство</h3>
+                        <h3 class="card-title">Судебное представительство</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Представительство в судах общей юрисдикции</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Представительство в арбитражных судах</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Представительство в административных судах</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Апелляционное и кассационное производство</li>
+                    <ul class="card-list">
+                        <li>Представительство в судах общей юрисдикции</li>
+                        <li>Представительство в арбитражных судах</li>
+                        <li>Представительство в административных судах</li>
+                        <li>Апелляционное и кассационное производство</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-file-pen text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-file-pen"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Составление документов</h3>
+                        <h3 class="card-title">Составление документов</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Исковые заявления и жалобы</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Апелляционные и кассационные жалобы</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Документы для госорганов</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Ходатайства и доверенности</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Договоры и мировые соглашения</li>
+                    <ul class="card-list">
+                        <li>Исковые заявления и жалобы</li>
+                        <li>Апелляционные и кассационные жалобы</li>
+                        <li>Документы для госорганов</li>
+                        <li>Ходатайства и доверенности</li>
+                        <li>Договоры и мировые соглашения</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-handshake-angle text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-handshake-angle"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Досудебное урегулирование</h3>
+                        <h3 class="card-title">Досудебное урегулирование</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Проведение переговоров</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Медиация (включая налоговую)</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Составление и направление претензий</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Досудебное урегулирование конфликтов</li>
+                    <ul class="card-list">
+                        <li>Проведение переговоров</li>
+                        <li>Медиация (включая налоговую)</li>
+                        <li>Составление и направление претензий</li>
+                        <li>Досудебное урегулирование конфликтов</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-magnifying-glass-chart text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-magnifying-glass-chart"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Юридическая экспертиза</h3>
+                        <h3 class="card-title">Юридическая экспертиза</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Проверка и анализ договоров</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Экспертиза корпоративных документов</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Анализ судебной практики</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Экспертиза судебных решений</li>
+                    <ul class="card-list">
+                        <li>Проверка и анализ договоров</li>
+                        <li>Экспертиза корпоративных документов</li>
+                        <li>Анализ судебной практики</li>
+                        <li>Экспертиза судебных решений</li>
                     </ul>
                 </div>
                 
-                <div class="specialization-card bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-neutral-100">
-                    <div class="flex items-start mb-5">
-                        <div class="card-icon mr-4">
-                            <i class="fas fa-file-circle-check text-2xl text-primary-600"></i>
+                <div class="specialization-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-file-circle-check"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mt-1">Исполнительное производство</h3>
+                        <h3 class="card-title">Исполнительное производство</h3>
                     </div>
-                    <ul class="space-y-2 text-neutral-700">
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Принудительное взыскание долгов</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Сопровождение исполнительного производства</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Обжалование действий судебных приставов</li>
-                        <li class="flex items-start"><span class="text-accent-500 mr-2 mt-1">•</span>Исполнение решений судов</li>
+                    <ul class="card-list">
+                        <li>Принудительное взыскание долгов</li>
+                        <li>Сопровождение исполнительного производства</li>
+                        <li>Обжалование действий судебных приставов</li>
+                        <li>Исполнение решений судов</li>
                     </ul>
                 </div>
             </div>
@@ -639,285 +1348,308 @@
     </section>
 
     <!-- Contact section -->
-    <section class="py-20 bg-gradient-to-b from-neutral-50 to-white" id="contacts">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">Контакты</h2>
-                <div class="section-title mx-auto"></div>
+    <section class="section" id="contacts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Контакты</h2>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="bg-white rounded-2xl p-8 shadow-card border border-neutral-100">
-                        <h3 class="text-2xl font-bold text-neutral-900 mb-6">Информация для связи</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="contact-method flex items-start p-4 rounded-xl bg-blue-50/50 border border-blue-100 hover:bg-blue-50 transition-colors">
-                                <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-user text-primary-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium text-neutral-900">Мельников Дмитрий Евгеньевич</p>
-                                    <p class="text-neutral-600">Адвокат, член Стерлитамакского городского филиала НО «БРКА»</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-method flex items-start p-4 rounded-xl bg-blue-50/50 border border-blue-100 hover:bg-blue-50 transition-colors">
-                                <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-map-marker-alt text-primary-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium text-neutral-900">Адрес</p>
-                                    <p class="text-neutral-600">Республика Башкортостан, г. Стерлитамак, ул. Мира, д. 10</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-method flex items-start p-4 rounded-xl bg-blue-50/50 border border-blue-100 hover:bg-blue-50 transition-colors">
-                                <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-phone text-primary-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium text-neutral-900">Телефон</p>
-                                    <p class="text-neutral-600"><a href="tel:+79177948731" class="hover:text-primary-600 transition-colors">+7 (917) 794-87-31</a></p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-method flex items-start p-4 rounded-xl bg-blue-50/50 border border-blue-100 hover:bg-blue-50 transition-colors">
-                                <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-envelope text-primary-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium text-neutral-900">Email</p>
-                                    <p class="text-neutral-600"><a href="mailto:advokat-d.melnikov@yandex.ru" class="hover:text-primary-600 transition-colors">advokat-d.melnikov@yandex.ru</a></p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-method flex items-start p-4 rounded-xl bg-blue-50/50 border border-blue-100 hover:bg-blue-50 transition-colors">
-                                <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-registered text-primary-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium text-neutral-900">Номер в реестре адвокатов</p>
-                                    <p class="text-neutral-600">03/3144</p>
-                                </div>
-                            </div>
-                            
-                            <div class="pt-4 border-t border-neutral-200 mt-4">
-                                <p class="font-medium text-neutral-900 mb-3">Мессенджеры</p>
-                                <div class="flex space-x-4">
-                                    <a href="https://t.me/advokat_melnikov" class="w-12 h-12 rounded-xl bg-neutral-100 flex items-center justify-center text-neutral-700 hover:bg-blue-500 hover:text-white transition-all">
-                                        <i class="fab fa-telegram text-2xl"></i>
-                                    </a>
-                                    <a href="#" class="w-12 h-12 rounded-xl bg-neutral-100 flex items-center justify-center text-neutral-700 hover:bg-black hover:text-white transition-all">
-                                        <img src="https://static.vecteezy.com/system/resources/previews/069/991/653/non_2x/max-app-icon-on-a-transparent-background-free-png.png" alt="Max app" class="custom-icon">
-                                    </a>
-                                </div>
-                            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 class="contact-title">Информация для связи</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Мельников Дмитрий Евгеньевич</h4>
+                            <p>Адвокат, член Стерлитамакского городского филиала НО «БРКА»</p>
                         </div>
                     </div>
                     
-                    <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-6 border border-neutral-200">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 bg-accent-100 p-3 rounded-lg mr-4">
-                                <i class="fas fa-clock text-accent-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-neutral-900 mb-1">Режим работы</h4>
-                                <p class="text-neutral-700">Понедельник-Пятница: 9:00-18:00</p>
-                                <p class="text-neutral-700">Суббота-Воскресенье: выходной</p>
-                                <p class="mt-2 text-sm text-neutral-600">* По предварительной записи возможен прием в другое время</p>
-                            </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
+                        <div class="contact-details">
+                            <h4>Адрес</h4>
+                            <p>Республика Башкортостан, г. Стерлитамак, ул. Мира, д. 10</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Телефон</h4>
+                            <p><a href="tel:+79177948731">+7 (917) 794-87-31</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:advokat-d.melnikov@yandex.ru">advokat-d.melnikov@yandex.ru</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-registered"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Номер в реестре адвокатов</h4>
+                            <p>03/3144</p>
+                        </div>
+                    </div>
+                    
+                    <div class="messengers">
+                        <h4 class="messengers-title">Мессенджеры</h4>
+                        <div class="messenger-links">
+                            <a href="https://t.me/advokat_melnikov" class="messenger-link telegram" aria-label="Telegram">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="#" class="messenger-link maxim" aria-label="Maxim">
+                                <img src="https://static.vecteezy.com/system/resources/previews/069/991/653/non_2x/max-app-icon-on-a-transparent-background-free-png.png" alt="Maxim app">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule">
+                        <h4><i class="fas fa-clock"></i> Режим работы</h4>
+                        <ul class="schedule-list">
+                            <li>Понедельник-Пятница: 9:00-18:00</li>
+                            <li>Суббота-Воскресенье: выходной</li>
+                        </ul>
+                        <p class="schedule-note">* По предварительной записи возможен прием в другое время</p>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-8 shadow-card border border-neutral-100">
-                    <h3 class="text-2xl font-bold text-neutral-900 mb-6">Записаться на консультацию</h3>
+                <div class="contact-form">
+                    <h3 class="form-title">Записаться на консультацию</h3>
                     <form id="consultationForm">
-                        <div class="grid grid-cols-1 gap-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-neutral-700 mb-1">Ваше имя *</label>
-                                <input type="text" id="name" class="form-input w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-primary-500 focus:ring-1 focus:ring-primary-500" required>
-                            </div>
-                            
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-neutral-700 mb-1">Телефон *</label>
-                                <input type="tel" id="phone" class="form-input w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-primary-500 focus:ring-1 focus:ring-primary-500" required>
-                            </div>
-                            
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-neutral-700 mb-1">Email</label>
-                                <input type="email" id="email" class="form-input w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-primary-500 focus:ring-1 focus:ring-primary-500">
-                            </div>
-                            
-                            <div>
-                                <label for="issue" class="block text-sm font-medium text-neutral-700 mb-1">Краткое описание вопроса *</label>
-                                <textarea id="issue" rows="4" class="form-input w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-primary-500 focus:ring-1 focus:ring-primary-500" required></textarea>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="flex items-center h-5">
-                                    <input id="privacyConsent" type="checkbox" class="form-input h-4 w-4 text-primary-600 rounded focus:ring-primary-500 border-neutral-300" required>
-                                </div>
-                                <div class="ml-3 text-sm">
-                                    <label for="privacyConsent" class="text-neutral-700">
-                                        Даю согласие на обработку персональных данных в соответствии с <a href="#" class="text-primary-600 hover:underline">Политикой конфиденциальности</a>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-primary-800 text-white font-medium py-3 px-6 rounded-xl hover:from-primary-700 hover:to-primary-900 transition-all transform hover:scale-[1.02] shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
-                                Отправить заявку
-                            </button>
+                        <div class="form-group">
+                            <label for="name">Ваше имя *</label>
+                            <input type="text" id="name" class="form-control" required>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="issue">Краткое описание вопроса *</label>
+                            <textarea id="issue" class="form-control" required></textarea>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="privacyConsent" required>
+                            <label for="privacyConsent">Даю согласие на обработку персональных данных в соответствии с <a href="#" style="color: var(--primary-600);">Политикой конфиденциальности</a></label>
+                        </div>
+                        
+                        <button type="submit" class="consultation-btn" style="width: 100%; margin-top: 20px;">
+                            Отправить заявку
+                        </button>
                     </form>
                 </div>
             </div>
-   </section>
+            
+            <div class="map-container">
+                <iframe src="https://yandex.ru/maps/11116/sterlitamak/house/ulitsa_mira_10/YUwYfwJnTkYHQFtpfXpwdH5mZg==/?ll=55.957730%2C53.615252&z=16" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-neutral-900 text-white pt-16 pb-8">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="md:col-span-1">
-                    <div class="text-2xl font-bold mb-6">
-                        Адвокат <span class="text-accent-400">Мельников Дмитрий Евгеньевич</span>
-                    </div>
-                    <p class="text-neutral-300 mb-6">Официальный сайт адвоката Мельникова Дмитрия Евгеньевича, оказывающего юридическую помощь в Республике Башкортостан.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://t.me/advokat_melnikov" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-blue-500 transition-colors">
-                            <i class="fab fa-telegram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-black transition-colors">
-                            <img src="https://static.vecteezy.com/system/resources/previews/069/991/653/non_2x/max-app-icon-on-a-transparent-background-free-png.png" alt="Max app" class="custom-icon">
-                        </a>
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col footer-about">
+                    <h3>Адвокат Мельников Дмитрий Евгеньевич</h3>
+                    <p>Официальный сайт адвоката Мельникова Дмитрия Евгеньевича, оказывающего юридическую помощь в Республике Башкортостан.</p>
+                    <div class="footer-social">
+                        <h4>Связаться в мессенджерах:</h4>
+                        <div class="footer-social-links">
+                            <a href="https://t.me/advokat_melnikov" class="social-icon" aria-label="Telegram">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Maxim">
+                                <img src="https://static.vecteezy.com/system/resources/previews/069/991/653/non_2x/max-app-icon-on-a-transparent-background-free-png.png" alt="Maxim app" style="width: 16px; height: 16px; object-fit: contain;">
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="md:col-span-1">
-                    <h3 class="text-lg font-bold text-white mb-6">Контакты</h3>
-                    <ul class="space-y-4 text-neutral-300">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent-400"></i>
-                            <span>Республика Башкортостан, г. Стерлитамак, ул. Мира, д. 10</span>
+                <div class="footer-col footer-contacts">
+                    <h3>Контакты</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Республика Башкортостан, г. Стерлитамак, ул. Мира, д. 10</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+79177948731">+7 (917) 794-87-31</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:advokat-d.melnikov@yandex.ru">advokat-d.melnikov@yandex.ru</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col useful-links">
+                    <h3>Полезные ссылки</h3>
+                    <ul>
+                        <li>
+                            <a href="https://fparf.ru/" target="_blank">
+                                <img src="https://www.sevadvokat.org/images/big3324.png" alt="ФПА">
+                                Федеральная палата адвокатов РФ
+                            </a>
                         </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-phone mr-3 text-accent-400"></i>
-                            <a href="tel:+79177948731" class="hover:text-white transition-colors">+7 (917) 794-87-31</a>
+                        <li>
+                            <a href="https://ap-rb.ru/" target="_blank">
+                                <img src="https://avatars.mds.yandex.net/i?id=9b605ab00606ea2a79fd14a68d64ab59cb932cf4-5086883-images-thumbs&n=13" alt="АП РБ" style="width: 24px; height: 24px; object-fit: contain;">
+                                Адвокатская палата Республики Башкортостан
+                            </a>
                         </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope mr-3 text-accent-400"></i>
-                            <a href="mailto:advokat-d.melnikov@yandex.ru" class="hover:text-white transition-colors">advokat-d.melnikov@yandex.ru</a>
+                        <li>
+                            <a href="https://www.advgazeta.ru/" target="_blank">
+                                <img src="https://avatars.mds.yandex.net/i?id=77bac12adaee1b19f383befbec4819396d748cdb-4735414-images-thumbs&n=13" alt="Адвокатская газета" style="width: 24px; height: 24px; object-fit: contain;">
+                                Адвокатская газета
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" style="color: var(--neutral-300);">
+                                <i class="fas fa-file-alt" style="color: var(--accent-400);"></i>
+                                Политика конфиденциальности
+                            </a>
                         </li>
                     </ul>
                 </div>
                 
-                <div class="md:col-span-1">
-                    <h3 class="text-lg font-bold text-white mb-6">Полезные ссылки</h3>
-                    <ul class="space-y-3">
-                        <li><a href="https://fparf.ru/" target="_blank" class="text-neutral-300 hover:text-white transition-colors flex items-center"><img src="https://www.sevadvokat.org/images/big3324.png" alt="ФПА" class="org-icon"> Федеральная палата адвокатов РФ</a></li>
-                        <li><a href="https://ap-rb.ru/" target="_blank" class="text-neutral-300 hover:text-white transition-colors flex items-center"><img src="https://avatars.mds.yandex.net/i?id=9b605ab00606ea2a79fd14a68d64ab59cb932cf4-5086883-images-thumbs&n=13" alt="АП РБ" class="org-icon"> Адвокатская палата Республики Башкортостан</a></li>
-                        <li><a href="https://www.advgazeta.ru/" target="_blank" class="text-neutral-300 hover:text-white transition-colors flex items-center"><img src="https://avatars.mds.yandex.net/i?id=77bac12adaee1b19f383befbec4819396d748cdb-4735414-images-thumbs&n=13" alt="Адвокатская газета" class="org-icon"> Адвокатская газета</a></li>
-                        <li><a href="#" class="text-neutral-300 hover:text-white transition-colors flex items-center"><i class="fas fa-file-alt mr-2 text-xs"></i> Политика конфиденциальности</a></li>
-                    </ul>
-                </div>
-                
-                <div class="md:col-span-1">
-                    <h3 class="text-lg font-bold text-white mb-6">Регистрационные данные</h3>
-                    <ul class="space-y-3 text-neutral-300">
-                        <li><strong>Наименование:</strong> Адвокат Мельников Дмитрий Евгеньевич</li>
-                        <li><strong>Реестровый номер:</strong> 03/3144</li>
-                        <li><strong>Адвокатская палата:</strong> Республики Башкортостан</li>
-                        <li><strong>Членство:</strong> Стерлитамакский городской филиал НО «БРКА»</li>
+                <div class="footer-col">
+                    <h3>Регистрационные данные</h3>
+                    <ul class="footer-links">
+                        <li>Наименование: Адвокат Мельников Дмитрий Евгеньевич</li>
+                        <li>Реестровый номер: 03/3144</li>
+                        <li>Адвокатская палата: Республики Башкортостан</li>
+                        <li>Членство: Стерлитамакский городской филиал НО «БРКА»</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-neutral-800 mt-12 pt-8 text-center text-neutral-400 text-sm">
+            <div class="footer-bottom">
                 <p>&copy; 2025 Адвокат Мельников Дмитрий Евгеньевич. Все права защищены.</p>
-                <p class="mt-1">Номер в реестре адвокатов Республики Башкортостан: 03/3144</p>
+                <p>Номер в реестре адвокатов Республики Башкортостан: 03/3144</p>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const cookieNotice = document.getElementById('cookieNotice');
-        const acceptCookiesBtn = document.getElementById('acceptCookies');
-        const declineCookiesBtn = document.getElementById('declineCookies');
-        const backToTopBtn = document.getElementById('backToTop');
-        
-        // Mobile menu functionality
-        mobileMenuBtn.addEventListener('click', function() {
-            const menuIcon = this.querySelector('i');
-            if (menuIcon.classList.contains('fa-bars')) {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-times');
-                // In a real implementation, this would toggle the mobile menu
-                alert('Мобильное меню будет реализовано в полной версии');
-            } else {
-                menuIcon.classList.remove('fa-times');
-                menuIcon.classList.add('fa-bars');
-            }
-        });
-        
-        // Cookie notice functionality
-        if (localStorage.getItem('cookiesAccepted') === 'true') {
-            cookieNotice.style.display = 'none';
-        }
-        
-        acceptCookiesBtn.addEventListener('click', function() {
-            localStorage.setItem('cookiesAccepted', 'true');
-            cookieNotice.style.display = 'none';
-        });
-        
-        declineCookiesBtn.addEventListener('click', function() {
-            localStorage.setItem('cookiesAccepted', 'false');
-            cookieNotice.style.display = 'none';
-        });
-        
-        // Back to top button functionality
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainMenu = document.getElementById('mainMenu');
+            const cookieNotice = document.getElementById('cookieNotice');
+            const acceptCookiesBtn = document.getElementById('acceptCookies');
+            const declineCookiesBtn = document.getElementById('declineCookies');
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            // Mobile menu functionality
+            if (mobileMenuBtn && mainMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mainMenu.classList.toggle('active');
+                    const icon = this.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
             }
             
-            // Add scroll animation to elements
-            document.querySelectorAll('.specialization-card').forEach(card => {
-                const position = card.getBoundingClientRect();
-                if (position.top < window.innerHeight - 100) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (mainMenu && mainMenu.classList.contains('active')) {
+                            mainMenu.classList.remove('active');
+                            const icon = mobileMenuBtn.querySelector('i');
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+            });
+            
+            // Back to top button
+            if (backToTopBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+                
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Cookie notice
+            if (cookieNotice && acceptCookiesBtn && declineCookiesBtn) {
+                if (localStorage.getItem('cookiesAccepted') === 'true') {
+                    cookieNotice.style.display = 'none';
                 }
-            });
-        });
-        
-        backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Form submission
-        const consultationForm = document.getElementById('consultationForm');
-        if (consultationForm) {
-            consultationForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                // In a real implementation, this would submit the form data
-                alert('Ваша заявка на консультацию успешно отправлена! В ближайшее время с вами свяжется адвокат.');
-                consultationForm.reset();
-            });
-        }
-        
-        // Initialize cards with animation
-        document.querySelectorAll('.specialization-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                
+                acceptCookiesBtn.addEventListener('click', function() {
+                    localStorage.setItem('cookiesAccepted', 'true');
+                    cookieNotice.style.display = 'none';
+                });
+                
+                declineCookiesBtn.addEventListener('click', function() {
+                    localStorage.setItem('cookiesAccepted', 'false');
+                    cookieNotice.style.display = 'none';
+                });
+            }
+            
+            // Form submission
+            const consultationForm = document.getElementById('consultationForm');
+            if (consultationForm) {
+                consultationForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Ваша заявка на консультацию успешно отправлена! В ближайшее время с вами свяжется адвокат.');
+                    consultationForm.reset();
+                });
+            }
         });
     </script>
 </body>
